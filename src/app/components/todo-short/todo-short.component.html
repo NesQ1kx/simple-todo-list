@@ -1,0 +1,10 @@
+<div class="todo-short">
+  <div class="title">{{ todo?.title }}</div>
+  <div class="description">
+    {{ todo?.description }}
+  </div>
+  <div class="button-container">
+    <button type="button" class="btn btn-outline-success" [routerLink]="['/edit-todo', todo.id]">Edit</button>
+    <button type="button" class="btn btn-outline-danger" (click)="removeTodo()">Remove</button>
+  </div>
+</div>

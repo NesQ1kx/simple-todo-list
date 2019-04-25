@@ -1,0 +1,23 @@
+@import '../../../assets/styles/variables';
+
+.content {
+  display: flex;
+  justify-content: center;
+
+  .add-todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+
+    .error {
+      outline: none !important;
+      border: 2px solid $color-error;
+    }
+
+    .error-message {
+      color: $color-error;
+      font-size: $font-size-small;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="edit-todo">
+    <form [formGroup]="todoForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text"
+               class="form-control"
+               id="title"
+               placeholder="Type title of todo"
+               formControlName="title"
+               [class.error]="todoForm.controls.title.invalid && (todoForm.controls.title.dirty || todoForm.controls.title.touched)">
+        <div class="error-message" *ngIf="todoForm.controls.title.dirty && todoForm.controls.title.invalid">Must contain at least 5 symbols</div>
+        <div class="error-message" *ngIf="todoForm.controls.title.touched && todoForm.controls.title.invalid">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control"
+                  id="description"
+                  rows="5"
+                  formControlName="description"
+                  [class.error]="todoForm.controls.description.invalid && (todoForm.controls.description.dirty || todoForm.controls.description.touched)"></textarea>
+        <div class="error-message" *ngIf="todoForm.controls.description.touched && todoForm.controls.description.invalid">This field is required</div>
+        <div class="error-message" *ngIf="todoForm.controls.description.dirty && todoForm.controls.description.invalid">Must contain at least 10 symbols</div>
+      </div>
+      <button type="button"
+              class="btn btn-success"
+              [disabled]="!todoForm.valid || todoForm.pristine"
+              (click)="submitTodo()">Submit</button>
+    </form>
+  </div>
+</div>

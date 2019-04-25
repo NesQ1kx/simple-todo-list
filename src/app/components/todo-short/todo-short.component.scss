@@ -1,0 +1,26 @@
+@import '../../../assets/styles/variables';
+
+.todo-short {
+  width: 60vw;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid $color-black;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-lightgray;
+
+  .title {
+    font-weight: bold;
+    font-size: $font-size-large;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+
+    .btn {
+      width: 100px;
+    }
+  }
+}

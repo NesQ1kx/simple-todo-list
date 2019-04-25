@@ -1,0 +1,6 @@
+<div class="content">
+  <div class="main">
+    <h1>Todo List</h1>
+    <app-todo-short *ngFor="let todo of (todos$ | async).todos" [todo]="todo"></app-todo-short>
+  </div>
+</div>
